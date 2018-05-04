@@ -24,12 +24,14 @@
               <li class="active"><a href="/">首页</a></li>
               <li><a href="/video">纪念品欣赏</a></li>
               <li><a href="/article">旅游资讯</a></li>
+              <li><a href="/about">关于我们</a></li>
               <a class="waves-effect waves-light btn pink darken-1" href="/admin/music" target="_blank">管理</a>
           </ul>
           <ul class="side-nav" id="mobile-demo" style="transform: translateX(-100%);">
               <li class="active"><a href="/">首页</a></li>
               <li><a href="/video">纪念品欣赏</a></li>
               <li><a href="/article">旅游资讯</a></li>
+              <li><a href="/about">关于我们</a></li>
               <a class="waves-effect waves-light btn pink darken-1" href="/admin/music" target="_blank">管理</a>
           </ul>
       </div>
