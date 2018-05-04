@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>查看文章分类</title>
+    <title>查看旅游资讯分类</title>
 
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
@@ -17,12 +17,12 @@
 <body>
 <nav class="nav-extended pink accent-1">
     <div class="nav-wrapper">
-        <a href="/admin/adminType" class="breadcrumb">&nbsp;&nbsp;文章分类</a>
+        <a href="/admin/adminType" class="breadcrumb">&nbsp;&nbsp;旅游资讯分类</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a class="dropdown-button" data-activates="music">音乐<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li><a class="dropdown-button" data-activates="video">视频<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li class="active"><a class="dropdown-button" data-activates="article">文章<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-button" data-activates="video">纪念品欣赏<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li class="active"><a class="dropdown-button" data-activates="article">旅游资讯<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
         <ul id="music" class="dropdown-content">
             <li><a class="pink-text text-accent-1" href="/admin/music" >音乐</a></li>
@@ -30,12 +30,12 @@
             <li><a class="pink-text text-accent-1" href="/admin/musicType">分类</a></li>
         </ul>
         <ul id="video" class="dropdown-content">
-            <li><a class="pink-text text-accent-1" href="/admin/video" >视频</a></li>
+            <li><a class="pink-text text-accent-1" href="/admin/video" >纪念品欣赏</a></li>
             <li class="divider"></li>
             <li><a class="pink-text text-accent-1" href="/admin/videoType">分类</a></li>
         </ul>
         <ul id="article" class="dropdown-content">
-            <li><a class="pink-text text-accent-1" href="/admin/article" >文章</a></li>
+            <li><a class="pink-text text-accent-1" href="/admin/article" >旅游资讯</a></li>
             <li class="divider"></li>
             <li><a class="pink-text text-accent-1" href="/admin/articleType">分类</a></li>
         </ul>

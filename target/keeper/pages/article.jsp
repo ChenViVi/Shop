@@ -21,15 +21,15 @@
           <a href="#" class="brand-logo">&nbsp;&nbsp;ViVi的杂货铺</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="/">音乐</a></li>
-              <li><a href="/video">视频</a></li>
-              <li class="active"><a href="/article">文章</a></li>
+              <li><a href="/">首页</a></li>
+              <li><a href="/video">纪念品欣赏</a></li>
+              <li class="active"><a href="/article">旅游资讯</a></li>
               <a class="waves-effect waves-light btn pink darken-1" href="/admin/music" target="_blank">管理</a>
           </ul>
           <ul class="side-nav" id="mobile-demo" style="transform: translateX(-100%);">
-              <li><a href="/">音乐</a></li>
-              <li><a href="/video">视频</a></li>
-              <li class="active"><a href="/article">文章</a></li>
+              <li><a href="/">首页</a></li>
+              <li><a href="/video">纪念品欣赏</a></li>
+              <li class="active"><a href="/article">旅游资讯</a></li>
               <a class="waves-effect waves-light btn pink darken-1" href="/admin/music" target="_blank">管理</a>
           </ul>
       </div>
@@ -45,28 +45,21 @@
 
     <c:forEach items="${typeList}" var="type">
      <div id="${type.id}" class="row" style="margin-top: 20px; display: block;">
+         <ul class="collapsible" data-collapsible="accordion" style="margin:20px">
         <c:forEach items="${videoList}" var="video">
             <c:if test="${video.type.id.equals(type.id)}">
-                <ul class="collapsible" data-collapsible="accordion" style="margin:20px">
-                    <li class="z-depth-1" >
+
+                    <li class="z-depth-1">
                         <div class="collapsible-header">${video.title}</div>
                         <div class="collapsible-body">
                             ${video.content}
                         </div>
                     </li>
-                </ul>
+
             </c:if>
         </c:forEach>
+         </ul>
      </div>
     </c:forEach>
-  <ul class="pagination">
-      <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-      <li class="active"><a href="#!">1</a></li>
-      <li class="waves-effect"><a href="#!">2</a></li>
-      <li class="waves-effect"><a href="#!">3</a></li>
-      <li class="waves-effect"><a href="#!">4</a></li>
-      <li class="waves-effect"><a href="#!">5</a></li>
-      <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-  </ul>
   </body>
 </html>

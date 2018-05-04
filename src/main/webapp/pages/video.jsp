@@ -18,18 +18,18 @@
   <body>
   <nav class="nav-extended pink accent-1">
       <div class="nav-wrapper">
-          <a href="#" class="brand-logo">&nbsp;&nbsp;ViVi的杂货铺</a>
+          <a href="#" class="brand-logo center">ViVi的杂货铺</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="/">音乐</a></li>
-              <li class="active"><a href="/video">视频</a></li>
-              <li><a href="/article">文章</a></li>
+              <li><a href="/">首页</a></li>
+              <li class="active"><a href="/video">纪念品欣赏</a></li>
+              <li><a href="/article">旅游资讯</a></li>
               <a class="waves-effect waves-light btn pink darken-1" href="/admin/music" target="_blank">管理</a>
           </ul>
           <ul class="side-nav" id="mobile-demo" style="transform: translateX(-100%);">
-              <li><a href="/">音乐</a></li>
-              <li class="active"><a href="/video">视频</a></li>
-              <li><a href="/article">文章</a></li>
+              <li><a href="/">首页</a></li>
+              <li class="active"><a href="/video">纪念品欣赏</a></li>
+              <li><a href="/article">旅游资讯</a></li>
               <a class="waves-effect waves-light btn pink darken-1" href="/admin/music" target="_blank">管理</a>
           </ul>
       </div>
@@ -54,14 +54,14 @@
                     </div>
                     <div class="card-content">
                         <span class="card-title truncate activator pink-text text-accent-1">${video.name}</span>
-                        <p>评分: ${video.score}
+                        <p>￥${video.score}
                             <a class="external-link right pink-text text-accent-1" href="${video.link}" target="_blank">
                                 <i class="material-icons right">fast_forward</i>
                             </a>
                         </p>
                     </div>
                     <div class="card-reveal">
-                        <span class="card-title pink-text text-accent-1">简评<i class="material-icons right">close</i></span>
+                        <span class="card-title pink-text text-accent-1"><i class="material-icons right">close</i></span>
                         <p>${video.comment}</p>
                     </div>
                 </div>
