@@ -11,7 +11,6 @@ public class ArticleEntity {
     private int id;
     private String title;
     private String content;
-    private ArticleTypeEntity type;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -63,15 +62,5 @@ public class ArticleEntity {
         result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + (content != null ? content.hashCode() : 0);
         return result;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "type_id", referencedColumnName = "id", nullable = false)
-    public ArticleTypeEntity getType() {
-        return type;
-    }
-
-    public void setType(ArticleTypeEntity type) {
-        this.type = type;
     }
 }

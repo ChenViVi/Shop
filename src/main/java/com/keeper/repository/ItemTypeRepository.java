@@ -13,10 +13,4 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Repository
 public interface ItemTypeRepository extends JpaRepository<ItemTypeEntity, Integer> {
-    @Modifying      // 说明该方法是修改操作
-    @Transactional  // 说明该方法是事务性操作
-    // 定义查询
-    // @Param注解用于提取参数
-    @Query("update MusicTypeEntity us set us.name=:qName where us.id=:qId")
-    public void updateVideoType(@Param("qName") String name, @Param("qId") Integer id);
 }

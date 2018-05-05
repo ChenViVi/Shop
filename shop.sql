@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4
--- https://www.phpmyadmin.net/
+-- version 4.0.10.20
+-- https://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: 2018-05-04 08:22:29
--- 服务器版本： 5.7.14
--- PHP Version: 5.6.25
+-- 主机: 127.0.0.1
+-- 生成日期: 2018-05-05 15:38:20
+-- 服务器版本: 5.7.21
+-- PHP 版本: 5.6.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,11 +14,50 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Database: `keeper`
+-- 数据库: `shop`
 --
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `about`
+--
+
+CREATE TABLE IF NOT EXISTS `about` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `content` text NOT NULL COMMENT '关于页面的内容',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `about`
+--
+
+INSERT INTO `about` (`id`, `content`) VALUES
+(1, '我是一个很简单的卡片。我很擅长于包含少量的信息。我很方便，因为我只需要一个小标记就可以有效地使用。在其他框架中我叫做面板。');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `admin`
+--
+
+CREATE TABLE IF NOT EXISTS `admin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `account` varchar(20) NOT NULL COMMENT '管理员账号',
+  `password` varchar(20) NOT NULL COMMENT '管理员密码',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `admin`
+--
+
+INSERT INTO `admin` (`id`, `account`, `password`) VALUES
+(1, 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -26,81 +65,64 @@ SET time_zone = "+00:00";
 -- 表的结构 `article`
 --
 
-CREATE TABLE `article` (
-  `id` int(11) NOT NULL,
-  `type_id` int(11) NOT NULL,
-  `title` varchar(20) NOT NULL,
-  `content` text NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS `article` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(20) NOT NULL COMMENT '资讯标题',
+  `content` text NOT NULL COMMENT '资讯内容',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4 ;
 
 --
 -- 转存表中的数据 `article`
 --
 
-INSERT INTO `article` (`id`, `type_id`, `title`, `content`) VALUES
-(1, 1, '笑话', '某日刘虹宏涛遇到外宾，就上前搭话曰：＂ｉam hongtao liu .”外宾曰：＂我还他妈的是方块七呢．＂'),
-(2, 1, '陈叶倩', '要好好调养身体哟，以后吸取教训不要老熬夜了'),
-(3, 1, '陈叶倩', '希望你能快点好起来');
+INSERT INTO `article` (`id`, `title`, `content`) VALUES
+(1, '笑话', '某日刘虹宏涛遇到外宾，就上前搭话曰：＂ｉam hongtao liu .”外宾曰：＂我还他妈的是方块七呢．＂'),
+(2, '陈叶倩', '要好好调养身体哟，以后吸取教训不要老熬夜了'),
+(3, '陈叶倩', '希望你能快点好起来');
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `article_type`
+-- 表的结构 `item`
 --
 
-CREATE TABLE `article_type` (
+CREATE TABLE IF NOT EXISTS `item` (
   `id` int(11) NOT NULL,
-  `name` varchar(45) NOT NULL
+  `detail` text NOT NULL COMMENT '纪念品信息',
+  `cover` varchar(225) NOT NULL COMMENT '封面',
+  `name` varchar(20) NOT NULL COMMENT '纪念品名称',
+  `price` double NOT NULL COMMENT '纪念品价格',
+  `type_id` int(11) NOT NULL COMMENT '纪念品种类id',
+  PRIMARY KEY (`id`),
+  KEY `FKkkuvx6654ty2s5y7buvau85s6` (`type_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
--- 转存表中的数据 `article_type`
+-- 转存表中的数据 `item`
 --
 
-INSERT INTO `article_type` (`id`, `name`) VALUES
-(1, '闲谈');
+INSERT INTO `item` (`id`, `detail`, `cover`, `name`, `price`, `type_id`) VALUES
+(1, '好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看好看', 'http://p3.music.126.net/FP0T3QTqbosVHKI3Vxse-A==/6620159511857506.jpg?param=200y200', '土家族头饰', 8.1, 1);
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `music`
+-- 表的结构 `item_type`
 --
 
-CREATE TABLE `music` (
-  `id` int(11) NOT NULL,
-  `comment` varchar(225) NOT NULL,
-  `cover` varchar(225) NOT NULL,
-  `link` varchar(225) NOT NULL,
-  `name` varchar(30) NOT NULL,
-  `score` varchar(10) NOT NULL,
-  `type_id` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS `item_type` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL COMMENT '纪念品类型名称',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=2 ;
 
 --
--- 转存表中的数据 `music`
+-- 转存表中的数据 `item_type`
 --
 
-INSERT INTO `music` (`id`, `comment`, `cover`, `link`, `name`, `score`, `type_id`) VALUES
-(1, '哈法', 'http://p1.music.126.net/uGIauNZovCCtlaKqL_DLfw==/109951163131910492.jpg?param=130y130', 'http://www.materializecss.cn/images/showcase/mezwsousou.png', 'Rave', '7.8', 1),
-(0, '阿萨德a', '使得是', '35345 ', '水电费', '5', 1);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `music_type`
---
-
-CREATE TABLE `music_type` (
-  `id` int(11) NOT NULL,
-  `name` varchar(20) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
-
---
--- 转存表中的数据 `music_type`
---
-
-INSERT INTO `music_type` (`id`, `name`) VALUES
-(1, '电子');
+INSERT INTO `item_type` (`id`, `name`) VALUES
+(1, '默认');
 
 -- --------------------------------------------------------
 
@@ -108,111 +130,20 @@ INSERT INTO `music_type` (`id`, `name`) VALUES
 -- 表的结构 `user`
 --
 
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `video`
---
-
-CREATE TABLE `video` (
-  `id` int(11) NOT NULL,
-  `comment` varchar(225) NOT NULL,
-  `cover` varchar(225) NOT NULL,
-  `link` varchar(225) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `score` varchar(20) NOT NULL,
-  `type_id` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `account` varchar(20) NOT NULL COMMENT '用户账号',
+  `password` varchar(20) NOT NULL COMMENT '用户密码',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=2 ;
 
 --
--- 转存表中的数据 `video`
+-- 转存表中的数据 `user`
 --
 
-INSERT INTO `video` (`id`, `comment`, `cover`, `link`, `name`, `score`, `type_id`) VALUES
-(1, '和小樱一起，release！', 'https://i0.hdslb.com/bfs/bangumi/07245c4bf4acb03a5819762fea3210c656aba66c.jpg_225x300.jpg', 'https://bangumi.bilibili.com/anime/21421', '魔卡少女樱 CLEAR CARD篇', '8.1', 1);
+INSERT INTO `user` (`id`, `account`, `password`) VALUES
+(1, 'user1', 'testtest');
 
--- --------------------------------------------------------
-
---
--- 表的结构 `video_type`
---
-
-CREATE TABLE `video_type` (
-  `id` int(11) NOT NULL,
-  `name` varchar(20) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
-
---
--- 转存表中的数据 `video_type`
---
-
-INSERT INTO `video_type` (`id`, `name`) VALUES
-(1, '番剧');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `article`
---
-ALTER TABLE `article`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `FKafxv6hc5lce4r0s98kjbdc9b` (`type_id`);
-
---
--- Indexes for table `article_type`
---
-ALTER TABLE `article_type`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `music`
---
-ALTER TABLE `music`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `FK98dv7rh7nj77si3u79ub67ue0` (`type_id`);
-
---
--- Indexes for table `music_type`
---
-ALTER TABLE `music_type`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `video`
---
-ALTER TABLE `video`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `FKkkuvx6654ty2s5y7buvau85s6` (`type_id`);
-
---
--- Indexes for table `video_type`
---
-ALTER TABLE `video_type`
-  ADD PRIMARY KEY (`id`);
-
---
--- 在导出的表使用AUTO_INCREMENT
---
-
---
--- 使用表AUTO_INCREMENT `article`
---
-ALTER TABLE `article`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

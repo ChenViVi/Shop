@@ -13,7 +13,6 @@ public class ItemEntity {
     private double price;
     private String detail;
     private String cover;
-    private String link;
     private ItemTypeEntity type;
 
     @Id
@@ -66,16 +65,6 @@ public class ItemEntity {
         this.cover = cover;
     }
 
-    @Basic
-    @Column(name = "link", nullable = false, length = 225)
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -88,8 +77,6 @@ public class ItemEntity {
         if (price != that.price) return false;
         if (detail != null ? !detail.equals(that.detail) : that.detail != null) return false;
         if (cover != null ? !cover.equals(that.cover) : that.cover != null) return false;
-        if (link != null ? !link.equals(that.link) : that.link != null) return false;
-
         return true;
     }
 
@@ -99,7 +86,6 @@ public class ItemEntity {
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (detail != null ? detail.hashCode() : 0);
         result = 31 * result + (cover != null ? cover.hashCode() : 0);
-        result = 31 * result + (link != null ? link.hashCode() : 0);
         return result;
     }
 

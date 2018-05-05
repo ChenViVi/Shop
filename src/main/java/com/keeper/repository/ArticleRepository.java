@@ -13,14 +13,4 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Repository
 public interface ArticleRepository extends JpaRepository<ArticleEntity, Integer> {
-    @Modifying
-    @Transactional
-    @Query("update ArticleEntity article set article.title=:qTitle, article.type.id=:qTypeId," +
-            "article.content=:qContent where article.id=:qId")
-    void updateArticle(@Param("qTitle") String title, @Param("qTypeId") int typeId, @Param("qContent") String content,@Param("qId") int id);
-
-    @Modifying
-    @Transactional
-    @Query("update ArticleEntity article set article.type.id=-1 where article.type.id=:qId")
-    public void deleteType(@Param("qId") int id);
 }
