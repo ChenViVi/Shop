@@ -2,8 +2,6 @@ package com.keeper.controller.admin;
 
 import com.keeper.model.ArticleEntity;
 import com.keeper.model.ArticleTypeEntity;
-import com.keeper.model.VideoEntity;
-import com.keeper.model.VideoTypeEntity;
 import com.keeper.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,11 +1,8 @@
 package com.keeper.controller.admin;
 
 import com.keeper.model.ArticleTypeEntity;
-import com.keeper.model.MusicTypeEntity;
-import com.keeper.model.VideoTypeEntity;
 import com.keeper.repository.ArticleRepository;
 import com.keeper.repository.ArticleTypeRepository;
-import com.keeper.repository.VideoTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

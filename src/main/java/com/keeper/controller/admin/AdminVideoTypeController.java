@@ -1,8 +1,8 @@
 package com.keeper.controller.admin;
 
-import com.keeper.model.VideoTypeEntity;
-import com.keeper.repository.VideoRepository;
-import com.keeper.repository.VideoTypeRepository;
+import com.keeper.model.ItemTypeEntity;
+import com.keeper.repository.ItemRepository;
+import com.keeper.repository.ItemTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -20,14 +20,14 @@ import java.util.List;
 public class AdminVideoTypeController {
 
     @Autowired
-    private VideoTypeRepository typeRepository;
+    private ItemTypeRepository typeRepository;
 
     @Autowired
-    private VideoRepository videoRepository;
+    private ItemRepository itemRepository;
 
     @RequestMapping(value = "/admin/videoType", method = RequestMethod.GET)
     public String getMusicType(ModelMap modelMap) {
-        List<VideoTypeEntity> typeList = typeRepository.findAll();
+        List<ItemTypeEntity> typeList = typeRepository.findAll();
         modelMap.addAttribute("typeList", typeList);
         return "admin/video/videoType";
     }
@@ -38,20 +38,20 @@ public class AdminVideoTypeController {
     }
 
     @RequestMapping(value = "/admin/videoType/addP", method = RequestMethod.POST)
-    public String addMusicTypePost(@ModelAttribute("type") VideoTypeEntity type) {
+    public String addMusicTypePost(@ModelAttribute("type") ItemTypeEntity type) {
         typeRepository.saveAndFlush(type);
         return "redirect:/admin/videoType";
     }
 
     @RequestMapping(value = "/admin/videoType/update/{id}", method = RequestMethod.GET)
     public String updateMusicType(@PathVariable("id") Integer typeId, ModelMap modelMap) {
-        VideoTypeEntity type = typeRepository.findOne(typeId);
+        ItemTypeEntity type = typeRepository.findOne(typeId);
         modelMap.addAttribute("type", type);
         return "admin/video/updateVideoType";
     }
 
     @RequestMapping(value = "/admin/videoType/updateP", method = RequestMethod.POST)
-    public String updateMusicTypePost(@ModelAttribute("categoryP") VideoTypeEntity type) {
+    public String updateMusicTypePost(@ModelAttribute("categoryP") ItemTypeEntity type) {
         typeRepository.updateVideoType(type.getName(),type.getId());
         typeRepository.flush();
         return "redirect:/admin/videoType";
@@ -59,7 +59,7 @@ public class AdminVideoTypeController {
 
     @RequestMapping(value = "/admin/videoType/delete/{id}", method = RequestMethod.GET)
     public String deleteMusicType(@PathVariable("id") Integer typeId) {
-        videoRepository.deleteType(typeId);
+        itemRepository.deleteType(typeId);
         typeRepository.delete(typeId);
         typeRepository.flush();
         return "redirect:/admin/videoType";
