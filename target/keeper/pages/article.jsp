@@ -35,33 +35,16 @@
               <a class="waves-effect waves-light btn pink darken-1" href="/admin/music" target="_blank">管理</a>
           </ul>
       </div>
-      <div class="nav-content">
-          <ul class="tabs pink accent-1">
-              <c:forEach items="${typeList}" var="type">
-                  <li class="tab"><a href="#${type.id}"  class="white-text">${type.name}</a></li>
-              </c:forEach>
-              <li class="indicator white" style="right: 186px; left: 68px;"></li>
-          </ul>
-      </div>
   </nav>
-
-    <c:forEach items="${typeList}" var="type">
-     <div id="${type.id}" class="row" style="margin-top: 20px; display: block;">
-         <ul class="collapsible" data-collapsible="accordion" style="margin:20px">
-        <c:forEach items="${videoList}" var="video">
-            <c:if test="${video.type.id.equals(type.id)}">
-
-                    <li class="z-depth-1">
-                        <div class="collapsible-header">${video.title}</div>
-                        <div class="collapsible-body">
-                            ${video.content}
-                        </div>
-                    </li>
-
-            </c:if>
-        </c:forEach>
-         </ul>
-     </div>
-    </c:forEach>
+  <ul class="collapsible" data-collapsible="accordion" style="margin:20px">
+      <c:forEach items="${videoList}" var="video">
+          <li class="z-depth-1">
+              <div class="collapsible-header">${video.title}</div>
+              <div class="collapsible-body">
+                      ${video.content}
+              </div>
+          </li>
+      </c:forEach>
+  </ul>
   </body>
 </html>
