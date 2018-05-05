@@ -22,14 +22,14 @@
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><a href="/">首页</a></li>
-              <li class="active"><a href="/item">纪念品欣赏</a></li>
+              <li class="active"><a href="/items">纪念品欣赏</a></li>
               <li><a href="/article">旅游资讯</a></li>
               <li><a href="/about">关于我们</a></li>
               <a class="waves-effect waves-light btn pink darken-1" href="/admin/music" target="_blank">管理</a>
           </ul>
           <ul class="side-nav" id="mobile-demo" style="transform: translateX(-100%);">
               <li><a href="/">首页</a></li>
-              <li class="active"><a href="/item">纪念品欣赏</a></li>
+              <li class="active"><a href="/items">纪念品欣赏</a></li>
               <li><a href="/article">旅游资讯</a></li>
               <li><a href="/about">关于我们</a></li>
               <a class="waves-effect waves-light btn pink darken-1" href="/admin/music" target="_blank">管理</a>
@@ -56,15 +56,15 @@
                     </div>
                     <div class="card-content">
                         <span class="card-title truncate activator pink-text text-accent-1">${item.name}</span>
-                        <p>￥${item.score}
-                            <a class="external-link right pink-text text-accent-1" href="/item/${item.id}" target="_blank">
+                        <p>￥${item.price}
+                            <a class="external-link right pink-text text-accent-1" href="/item/${item.id}">
                                 <i class="material-icons right">fast_forward</i>
                             </a>
                         </p>
                     </div>
                     <div class="card-reveal">
                         <span class="card-title pink-text text-accent-1"><i class="material-icons right">close</i></span>
-                        <p>${item.comment}</p>
+                        <p>${item.detail}</p>
                     </div>
                 </div>
             </div>

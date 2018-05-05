@@ -16,9 +16,9 @@ public interface ItemRepository extends JpaRepository<ItemEntity, Integer> {
     @Modifying
     @Transactional
     @Query("update ItemEntity video set video.name=:qName, video.type.id=:qTypeId," +
-            " video.comment=:qComment, video.score=:qScore, video.cover=:qCover, video.link=:qLink where video.id=:qId")
-    void updateVideo(@Param("qName") String name, @Param("qTypeId") int typeId, @Param("qComment") String comment,
-                     @Param("qScore") String score, @Param("qCover") String cover, @Param("qLink") String link, @Param("qId") int id);
+            " video.detail=:qComment, video.price=:qScore, video.cover=:qCover, video.link=:qLink where video.id=:qId")
+    void updateVideo(@Param("qName") String name, @Param("qTypeId") int typeId, @Param("qComment") String detail,
+                     @Param("qScore") double score, @Param("qCover") String cover, @Param("qLink") String link, @Param("qId") int id);
 
     @Modifying
     @Transactional

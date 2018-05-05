@@ -2,10 +2,8 @@ package com.keeper.controller;
 
 
 
-import com.keeper.model.MusicEntity;
-import com.keeper.model.MusicTypeEntity;
-import com.keeper.repository.MusicRepository;
-import com.keeper.repository.MusicTypeRepository;
+import com.keeper.model.*;
+import com.keeper.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -22,17 +20,17 @@ import java.util.List;
 public class MusicController {
 
     @Autowired
-    private MusicRepository musicRepository;
+    private ItemRepository itemRepository;
 
     @Autowired
-    private MusicTypeRepository typeRepository;
+    private ArticleRepository articleRepository;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(ModelMap modelMap) {
-        List<MusicTypeEntity> typeList = typeRepository.findAll();
-        List<MusicEntity> musicList = musicRepository.findAll();
-        modelMap.addAttribute("typeList", typeList);
-        modelMap.addAttribute("musicList", musicList);
+        List<ItemEntity> itemList = itemRepository.findAll();
+        List<ArticleEntity> articleList = articleRepository.findAll();
+        modelMap.addAttribute("itemList", itemList);
+        modelMap.addAttribute("articleList", articleList);
         return "index";
     }
 }

@@ -10,8 +10,8 @@ import javax.persistence.*;
 public class ItemEntity {
     private int id;
     private String name;
-    private String comment;
-    private String score;
+    private double price;
+    private String detail;
     private String cover;
     private String link;
     private ItemTypeEntity type;
@@ -37,23 +37,23 @@ public class ItemEntity {
     }
 
     @Basic
-    @Column(name = "comment", nullable = false, length = 225)
-    public String getComment() {
-        return comment;
+    @Column(name = "price", nullable = false, length = 225)
+    public double getPrice() {
+        return price;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     @Basic
-    @Column(name = "score", nullable = false, length = 20)
-    public String getScore() {
-        return score;
+    @Column(name = "detail", nullable = false, length = 20)
+    public String getDetail() {
+        return detail;
     }
 
-    public void setScore(String score) {
-        this.score = score;
+    public void setDetail(String detail) {
+        this.detail = detail;
     }
 
     @Basic
@@ -85,8 +85,8 @@ public class ItemEntity {
 
         if (id != that.id) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (comment != null ? !comment.equals(that.comment) : that.comment != null) return false;
-        if (score != null ? !score.equals(that.score) : that.score != null) return false;
+        if (price != that.price) return false;
+        if (detail != null ? !detail.equals(that.detail) : that.detail != null) return false;
         if (cover != null ? !cover.equals(that.cover) : that.cover != null) return false;
         if (link != null ? !link.equals(that.link) : that.link != null) return false;
 
@@ -97,8 +97,7 @@ public class ItemEntity {
     public int hashCode() {
         int result = id;
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (comment != null ? comment.hashCode() : 0);
-        result = 31 * result + (score != null ? score.hashCode() : 0);
+        result = 31 * result + (detail != null ? detail.hashCode() : 0);
         result = 31 * result + (cover != null ? cover.hashCode() : 0);
         result = 31 * result + (link != null ? link.hashCode() : 0);
         return result;

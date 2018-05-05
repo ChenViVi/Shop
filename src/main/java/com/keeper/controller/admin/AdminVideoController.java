@@ -58,7 +58,7 @@ public class AdminVideoController {
     @RequestMapping(value = "/admin/video/updateP", method = RequestMethod.POST)
     public String updateBlogP(@ModelAttribute("videoP") ItemEntity video) {
         itemRepository.updateVideo(video.getName(), video.getType().getId(),
-                video.getComment(), video.getScore(), video.getCover(),video.getLink(),video.getId());
+                video.getDetail(), video.getPrice(), video.getCover(),video.getLink(),video.getId());
         itemRepository.flush();
         return "redirect:/admin/video";
     }

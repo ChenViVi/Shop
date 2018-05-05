@@ -12,6 +12,8 @@
       <script type="text/javascript">
           $(document).ready(function() {
               $(".button-collapse").sideNav();
+              $('.carousel').carousel();
+              $('.carousel.carousel-slider').carousel({full_width: true});
           });
       </script>
   </head>
@@ -22,55 +24,89 @@
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li class="active"><a href="/">首页</a></li>
-              <li><a href="/video">纪念品欣赏</a></li>
+              <li><a href="/items">纪念品欣赏</a></li>
               <li><a href="/article">旅游资讯</a></li>
               <li><a href="/about">关于我们</a></li>
               <a class="waves-effect waves-light btn pink darken-1" href="/admin/music" target="_blank">管理</a>
           </ul>
           <ul class="side-nav" id="mobile-demo" style="transform: translateX(-100%);">
               <li class="active"><a href="/">首页</a></li>
-              <li><a href="/video">纪念品欣赏</a></li>
+              <li><a href="/items">纪念品欣赏</a></li>
               <li><a href="/article">旅游资讯</a></li>
               <li><a href="/about">关于我们</a></li>
               <a class="waves-effect waves-light btn pink darken-1" href="/admin/music" target="_blank">管理</a>
           </ul>
       </div>
-      <div class="nav-content">
-          <ul class="tabs pink accent-1">
-              <c:forEach items="${typeList}" var="type">
-                  <li class="tab"><a href="#${type.id}"  class="white-text">${type.name}</a></li>
+  </nav>
+  <div class="carousel carousel-slider center" data-indicators="true">
+      <div class="carousel-fixed-item center">
+          <a class="btn waves-effect white grey-text darken-text-2">按钮</a>
+      </div>
+      <div class="carousel-item red white-text" href="#one!">
+          <h2>第一面板</h2>
+          <p class="white-text">这是第一面板</p>
+      </div>
+      <div class="carousel-item amber white-text" href="#two!">
+          <h2>第二面板</h2>
+          <p class="white-text">这是第二面板</p>
+      </div>
+      <div class="carousel-item green white-text" href="#three!">
+          <h2>第三面板</h2>
+          <p class="white-text">这是第三面板</p>
+      </div>
+      <div class="carousel-item blue white-text" href="#four!">
+          <h2>第四面板</h2>
+          <p class="white-text">这是第四面板</p>
+      </div>
+  </div>
+  <div class="card" style="margin-top: 20px;margin-left: 20px;margin-right: 20px;">
+      <div class="card-content">
+          <span class="card-title">纪念品推荐</span>
+          <div class="row">
+              <c:forEach items="${itemList}" var="item">
+                  <div class="book-item col s6 m3 l2">
+                      <div class="card">
+                          <div class="card-image waves-effect waves-block waves-light">
+                              <img class="activator" width=200px height=200px src="${item.cover}">
+                          </div>
+                          <div class="card-content">
+                              <span class="card-title truncate activator pink-text text-accent-1">${item.name}</span>
+                              <p>￥${item.price}
+                                  <a class="external-link right pink-text text-accent-1" href="/item/${item.id}">
+                                      <i class="material-icons right">fast_forward</i>
+                                  </a>
+                              </p>
+                          </div>
+                          <div class="card-reveal">
+                              <span class="card-title pink-text text-accent-1"><i class="material-icons right">close</i></span>
+                              <p>${item.detail}</p>
+                          </div>
+                      </div>
+                  </div>
               </c:forEach>
-              <li class="indicator white" style="right: 186px; left: 68px;"></li>
+          </div>
+      </div>
+      <div class="card-action">
+          <a href="/items" class="pink-text text-accent-1">查看更多</a>
+      </div>
+  </div>
+  <div class="card" style="margin-top: 20px;margin-left: 20px;margin-right: 20px;">
+      <div class="card-content">
+          <span class="card-title">旅游资讯推荐</span>
+          <ul class="collapsible" data-collapsible="accordion" style="margin:20px">
+              <c:forEach items="${articleList}" var="article">
+                  <li class="z-depth-1">
+                      <div class="collapsible-header">${article.title}</div>
+                      <div class="collapsible-body">
+                              ${article.content}
+                      </div>
+                  </li>
+              </c:forEach>
           </ul>
       </div>
-  </nav>
-
-    <c:forEach items="${typeList}" var="type">
-     <div id="${type.id}" class="row" style="margin-top: 20px; display: block;">
-        <c:forEach items="${musicList}" var="music">
-            <c:if test="${music.type.id.equals(type.id)}">
-            <div class="book-item col s6 m3 l2">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="${music.cover}">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title truncate activator pink-text text-accent-1">${music.name}</span>
-                        <p>评分: ${music.score}
-                            <a class="external-link right pink-text text-accent-1" href="${music.link}" target="_blank">
-                                <i class="material-icons right">fast_forward</i>
-                            </a>
-                        </p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title pink-text text-accent-1">简评<i class="material-icons right">close</i></span>
-                        <p>${music.comment}</p>
-                    </div>
-                </div>
-            </div>
-            </c:if>
-        </c:forEach>
-     </div>
-    </c:forEach>
+      <div class="card-action">
+          <a href="/article" class="pink-text text-accent-1">查看更多</a>
+      </div>
+  </div>
   </body>
 </html>

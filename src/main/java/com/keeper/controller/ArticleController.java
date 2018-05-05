@@ -20,7 +20,7 @@ import java.util.List;
 public class ArticleController {
 
     @Autowired
-    private ArticleRepository videoRepository;
+    private ArticleRepository articleRepository;
 
     @Autowired
     private ArticleTypeRepository typeRepository;
@@ -28,7 +28,7 @@ public class ArticleController {
     @RequestMapping(value = "/article", method = RequestMethod.GET)
     public String index(ModelMap modelMap) {
         List<ArticleTypeEntity> typeList = typeRepository.findAll();
-        List<ArticleEntity> videoList = videoRepository.findAll();
+        List<ArticleEntity> videoList = articleRepository.findAll();
         modelMap.addAttribute("typeList", typeList);
         modelMap.addAttribute("videoList", videoList);
         return "article";

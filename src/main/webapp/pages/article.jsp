@@ -22,14 +22,14 @@
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><a href="/">首页</a></li>
-              <li><a href="/video">纪念品欣赏</a></li>
+              <li><a href="/items">纪念品欣赏</a></li>
               <li class="active"><a href="/article">旅游资讯</a></li>
               <li><a href="/about">关于我们</a></li>
               <a class="waves-effect waves-light btn pink darken-1" href="/admin/music" target="_blank">管理</a>
           </ul>
           <ul class="side-nav" id="mobile-demo" style="transform: translateX(-100%);">
               <li><a href="/">首页</a></li>
-              <li><a href="/video">纪念品欣赏</a></li>
+              <li><a href="/items">纪念品欣赏</a></li>
               <li class="active"><a href="/article">旅游资讯</a></li>
               <li><a href="/about">关于我们</a></li>
               <a class="waves-effect waves-light btn pink darken-1" href="/admin/music" target="_blank">管理</a>
