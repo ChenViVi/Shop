@@ -8,6 +8,7 @@ import com.keeper.repository.ItemTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -33,5 +34,12 @@ public class ItemController {
         modelMap.addAttribute("typeList", typeList);
         modelMap.addAttribute("itemList", itemList);
         return "items";
+    }
+
+    @RequestMapping(value = "/item/{id}", method = RequestMethod.GET)
+    public String item(@PathVariable("id") int id, ModelMap modelMap) {
+        ItemEntity item = itemRepository.findOne(id);
+        modelMap.addAttribute("item", item);
+        return "item";
     }
 }
