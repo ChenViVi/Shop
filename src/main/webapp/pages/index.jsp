@@ -10,6 +10,10 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <script type="text/javascript">
+          window.setInterval("change_banner()",5000);
+          function change_banner() {
+              $('.carousel').carousel('next');
+          }
           $(document).ready(function() {
               $(".button-collapse").sideNav();
               $('.carousel').carousel();
@@ -38,26 +42,11 @@
           </ul>
       </div>
   </nav>
-  <div class="carousel carousel-slider center" data-indicators="true">
-      <div class="carousel-fixed-item center">
-          <a class="btn waves-effect white grey-text darken-text-2">按钮</a>
-      </div>
-      <div class="carousel-item red white-text" href="#one!">
-          <h2>第一面板</h2>
-          <p class="white-text">这是第一面板</p>
-      </div>
-      <div class="carousel-item amber white-text" href="#two!">
-          <h2>第二面板</h2>
-          <p class="white-text">这是第二面板</p>
-      </div>
-      <div class="carousel-item green white-text" href="#three!">
-          <h2>第三面板</h2>
-          <p class="white-text">这是第三面板</p>
-      </div>
-      <div class="carousel-item blue white-text" href="#four!">
-          <h2>第四面板</h2>
-          <p class="white-text">这是第四面板</p>
-      </div>
+  <div class="carousel carousel-slider">
+    <c:forEach items="${bannerList}" var="banner">
+      <a class="carousel-item"><img src="${banner.url}"></a>
+
+    </c:forEach>
   </div>
   <div class="card" style="margin-top: 20px;margin-left: 20px;margin-right: 20px;">
       <div class="card-content">
@@ -87,7 +76,7 @@
           </div>
       </div>
       <div class="card-action">
-          <a href="/items" class="pink-text text-accent-1">查看更多</a>
+          <a href="/items" class="pink-text text-accent-1 valign right">查看更多</a>
       </div>
   </div>
   <div class="card" style="margin-top: 20px;margin-left: 20px;margin-right: 20px;">
@@ -97,15 +86,13 @@
               <c:forEach items="${articleList}" var="article">
                   <li class="z-depth-1">
                       <div class="collapsible-header">${article.title}</div>
-                      <div class="collapsible-body">
-                              ${article.content}
-                      </div>
+                      <div class="collapsible-body">${article.content}</div>
                   </li>
               </c:forEach>
           </ul>
       </div>
       <div class="card-action">
-          <a href="/article" class="pink-text text-accent-1">查看更多</a>
+          <a href="/article" class="pink-text text-accent-1 valign right">查看更多</a>
       </div>
   </div>
   </body>
