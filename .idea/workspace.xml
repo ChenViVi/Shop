@@ -32,11 +32,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="37" column="34" lean-forward="true" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+            <state relative-caret-position="512">
+              <caret line="38" column="53" lean-forward="true" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="persistence.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="10" column="64" lean-forward="false" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -140,7 +150,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/keeper/repository/ItemTypeRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/keeper/model/ItemEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/keeper/repository/ItemRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/56ed9b8b-95cc-49a7-889a-0b4a2d38bf75/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/keeper/model/AboutEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/keeper/model/ArticleEntity.java" />
@@ -156,6 +165,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/keeper/model/base/BaseEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/keeper/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
       </list>
     </option>
   </component>
@@ -943,12 +953,12 @@
       <workItem from="1525583966830" duration="673000" />
       <workItem from="1525614146931" duration="924000" />
       <workItem from="1525615189991" duration="3592000" />
-      <workItem from="1525669754708" duration="22963000" />
+      <workItem from="1525669754708" duration="23927000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66415000" />
+    <option name="totallyTimeSpent" value="67379000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1172,14 +1182,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="20" column="49" lean-forward="false" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/56ed9b8b-95cc-49a7-889a-0b4a2d38bf75/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1360,8 +1362,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="37" column="34" lean-forward="true" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+        <state relative-caret-position="512">
+          <caret line="38" column="53" lean-forward="true" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="10" column="64" lean-forward="false" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="64" />
           <folding />
         </state>
       </provider>
