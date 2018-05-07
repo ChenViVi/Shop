@@ -10,6 +10,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 
@@ -29,10 +31,26 @@ public class HomeController {
     private BannerRepository bannerRepository;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String index(ModelMap modelMap) {
+    public String index(ModelMap modelMap, HttpServletRequest request) {
         modelMap.addAttribute("itemList", itemRepository.findAll());
         modelMap.addAttribute("articleList", articleRepository.findAll());
         modelMap.addAttribute("bannerList", bannerRepository.findAll());
+        modelMap.addAttribute("login", -1);
+        Cookie[] cookies = request.getCookies();
+        Cookie account = null;
+        for(Cookie cookie : cookies){
+            if (cookie.getName().equals("account")){
+                account = cookie;
+            }
+            System.out.println("name:"+cookie.getName()+",value:"+ cookie.getValue());
+        }
+        if (account == null){
+            modelMap.addAttribute("login", 0);
+        }
+        else {
+            modelMap.addAttribute("login", 1);
+            modelMap.addAttribute("account", account.getValue());
+        }
         return "index";
     }
 }

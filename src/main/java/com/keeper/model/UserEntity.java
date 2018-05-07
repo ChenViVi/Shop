@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name = "user", schema = "list", catalog = "")
 public class UserEntity {
     private int id;
-    private String name;
+    private String account;
     private String password;
 
     @Id
@@ -23,13 +23,13 @@ public class UserEntity {
     }
 
     @Basic
-    @Column(name = "name", nullable = false, length = 20)
-    public String getName() {
-        return name;
+    @Column(name = "account", nullable = false, length = 20)
+    public String getAccount() {
+        return account;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAccount(String account) {
+        this.account = account;
     }
 
     @Basic
@@ -50,7 +50,7 @@ public class UserEntity {
         UserEntity that = (UserEntity) o;
 
         if (id != that.id) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        if (account != null ? !account.equals(that.account) : that.account != null) return false;
         if (password != null ? !password.equals(that.password) : that.password != null) return false;
 
         return true;
@@ -59,7 +59,7 @@ public class UserEntity {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (account != null ? account.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
         return result;
     }

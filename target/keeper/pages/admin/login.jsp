@@ -32,8 +32,8 @@
     <hr/>
     <form:form action="/admin/user/loginP" method="post" commandName="user" role="form">
         <div class="form-group">
-            <label for="name">账号:</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="输入账号:"/>
+            <label for="account">账号:</label>
+            <input type="text" class="form-control" id="account" name="account" placeholder="输入账号:"/>
         </div>
         <div class="form-group">
             <label for="password">账号:</label>
