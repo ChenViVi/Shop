@@ -8,6 +8,8 @@ import javax.persistence.*;
 @Entity
 @Table(name = "article", schema = "shop", catalog = "")
 public class ArticleEntity {
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     private String title;
     private String content;
