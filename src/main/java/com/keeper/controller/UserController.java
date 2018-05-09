@@ -28,19 +28,27 @@ public class UserController {
     @ResponseBody
     public BaseEntity login(@RequestParam(value="account") String account, @RequestParam(value="password") String password) {
         BaseEntity entity = new BaseEntity();
-        List<UserEntity> users = userRepository.findByAccount(account);
-        if (users.size() == 0){
-            entity.setMsg("此用户名未注册");
+        if(account == null || account.equals("")){
+            entity.setMsg("账户名不可谓空");
+        }
+        else if(password == null || account.equals("")){
+            entity.setMsg("密码不可为空");
         }
         else {
-            UserEntity user = users.get(0);
-            if (user.getPassword().equals(password)){
-                entity.setCode(1);
-                entity.setMsg("登录成功");
-                entity.setData(account);
+            List<UserEntity> users = userRepository.findByAccount(account);
+            if (users.size() == 0){
+                entity.setMsg("此用户名未注册");
             }
             else {
-                entity.setMsg("密码错误");
+                UserEntity user = users.get(0);
+                if (user.getPassword().equals(password)){
+                    entity.setCode(1);
+                    entity.setMsg("登录成功");
+                    entity.setData(account);
+                }
+                else {
+                    entity.setMsg("密码错误");
+                }
             }
         }
         return entity;
@@ -50,7 +58,19 @@ public class UserController {
     @ResponseBody
     public BaseEntity register(@RequestParam(value="account") String account, @RequestParam(value="password") String password) {
         BaseEntity entity = new BaseEntity();
-        if(userRepository.findByAccount(account).size() != 0){
+        if(account == null || account.equals("")){
+            entity.setMsg("账户名不可谓空");
+        }
+        else if(password == null || account.equals("")){
+            entity.setMsg("密码不可为空");
+        }
+        else if(password.length() < 6){
+            entity.setMsg("密码不可小于6位");
+        }
+        else if(password.length() > 18){
+            entity.setMsg("密码不可大于18位");
+        }
+        else if(userRepository.findByAccount(account).size() != 0){
             entity.setMsg("此用户名已被注册");
         }
         else{

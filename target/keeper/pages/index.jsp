@@ -105,7 +105,7 @@
       <div class="nav-wrapper">
           <a href="#" class="brand-logo center">ViVi的杂货铺</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-          <ul id="nav" class="right hide-on-med-and-down">
+          <ul id="nav" class="left">
               <li class="active"><a href="/">首页</a></li>
               <li><a href="/items">纪念品欣赏</a></li>
               <li><a href="/article">旅游资讯</a></li>
