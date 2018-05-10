@@ -125,13 +125,13 @@
   <a href="#modal-add"  type="button" class="btn blue" style="margin: 20px">添加</a>
   <div class="row">
       <c:forEach items="${articleList}" var="article">
-          <div class="card col s6" style="margin: 20px">
+          <div class="card col s12" style="margin: 20px">
               <div class="card-content">
                   <span class="card-title">${article.title}</span>
                   <p>${article.content}</p>
               </div>
               <div class="card-action">
-                  <a class="btn-update" data-id="${article.id}" data-title="${article.title}" data-content="${article.content}">编辑</a>
+                  <a href="#" class="btn-update" data-id="${article.id}" data-title="${article.title}" data-content="${article.content}">编辑</a>
                   <a href="/admin/article/delete/${article.id}">删除</a>
               </div>
           </div>
