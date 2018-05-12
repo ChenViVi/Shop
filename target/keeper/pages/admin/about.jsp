@@ -46,12 +46,12 @@
           <ul id="nav" class="left">
               <li><a href="/">首页</a></li>
               <li><a href="items">纪念品欣赏</a></li>
-              <li><a href="/admin/article/">旅游资讯</a></li>
-              <li class="active"><a href="/">关于我们</a></li>
+              <li><a href="article">旅游资讯</a></li>
+              <li class="active"><a href="">关于我们</a></li>
           </ul>
       </div>
   </nav>
-  <form>
+  <form style="margin: 20px">
       <div class="input-field col s12">
           <textarea id="content" name="content" class="materialize-textarea">${about.content}</textarea>
           <label for="content">关于</label>

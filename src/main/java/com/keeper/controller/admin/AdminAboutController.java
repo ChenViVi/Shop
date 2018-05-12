@@ -21,7 +21,7 @@ public class AdminAboutController {
     @Autowired
     private AboutRepository aboutRepository;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(ModelMap modelMap) {
         modelMap.addAttribute("about", aboutRepository.findOne(1));
         return "admin/about";

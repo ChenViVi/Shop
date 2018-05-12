@@ -20,7 +20,7 @@ public class AdminItemController {
     @Autowired
     private ItemRepository itemRepository;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(ModelMap modelMap) {
         modelMap.addAttribute("typeList", typeRepository.findAll());
         modelMap.addAttribute("itemList", itemRepository.findAll());
@@ -31,6 +31,6 @@ public class AdminItemController {
     public String update(@PathVariable("id") int id) {
         itemRepository.delete(id);
         itemRepository.flush();
-        return "redirect:/admin/items/";
+        return "redirect:/admin/items";
     }
 }

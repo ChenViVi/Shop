@@ -38,11 +38,12 @@ public class HomeController {
         modelMap.addAttribute("login", -1);
         Cookie[] cookies = request.getCookies();
         Cookie account = null;
-        for(Cookie cookie : cookies){
-            if (cookie.getName().equals("account")){
-                account = cookie;
+        if (cookies != null) {
+            for(Cookie cookie : cookies){
+                if (cookie.getName().equals("account")){
+                    account = cookie;
+                }
             }
-            System.out.println("name:"+cookie.getName()+",value:"+ cookie.getValue());
         }
         if (account == null){
             modelMap.addAttribute("login", 0);

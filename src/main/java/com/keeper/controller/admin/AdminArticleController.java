@@ -18,7 +18,7 @@ public class AdminArticleController {
     @Autowired
     private ArticleRepository articleRepository;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(ModelMap modelMap) {
         modelMap.addAttribute("articleList", articleRepository.findAll());
         return "admin/article";
@@ -73,6 +73,6 @@ public class AdminArticleController {
     public String update(@PathVariable("id") int id) {
         articleRepository.delete(id);
         articleRepository.flush();
-        return "redirect:/admin/article/";
+        return "redirect:/admin/article";
     }
 }
